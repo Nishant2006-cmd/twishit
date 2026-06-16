@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Letter</title>
+  <style>
+    body {
+      font-family: 'Courier', monospace;
+      background: #fdf6e3;
+      padding: 40px;
+    }
+    .letter {
+      border: 2px solid #3399ff;
+      padding: 20px;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+      white-space: pre-wrap; /* preserve line breaks */
+    }
+
+     .textbox1 {
+      width: 100%;
+      height: 250px;
+      padding: 15px;
+      border-radius: 12px;
+      border: 2px solid #3399ff;
+      background-color: #fdf6e3;
+      font-size: 16px;
+      color: #333;
+      resize: vertical;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.1);
+    }
+    #nextbtn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #f569f5;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    #nextbtn:hover {
+      background-color: #d94ed9;
+    }
+    .sticker-panel {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .sticker {
+      font-size: 28px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .sticker:hover {
+      transform: scale(1.3);
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+        /* Dark Theme */
+    body.dark {
+      background: linear-gradient(-135deg, #141420, #4a5760);
+      color: #f0f0f0;
+    }
+    
+    .container {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      width: 80%;
+      max-width: 700px;
+      padding: 30px;
+      text-align: center;
+    }
+    body.dark .container {
+      background: #2c2c3a;
+      box-shadow: 0 8px 20px rgba(255,255,255,0.1);
+    }
+
+    .textbox1 {
+      width: 100%;
+      height: 250px;
+      padding: 15px;
+      border-radius: 12px;
+      border: 2px solid #3399ff;
+      background-color: #29261e;
+      font-size: 16px;
+      resize: vertical;
+    }
+    body.dark .textbox1 {
+      background-color: #3a3a4d;
+      color: #1d1b1b;
+      border: 2px solid #191414;
+    }
+
+    #themebtn1 {
+        
+      font-size: 55px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #3b303b;
+      color: #0c0c0b;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 5px;
+     
+        border: none; 
+          background: none; 
+    }
+     #themebtn1:hover {
+      transform: scale(1.3);
+    }
+    body.dark {
+      background: linear-gradient(-135deg, #0c0e0d, #464343);
+color: #110f0f;
+
+    }
+
+
+
+     #themebtn2 {
+        
+      font-size: 55px;
+      cursor:crosshair;
+      transition: transform 0.2s;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #3b303b;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 5px;
+
+        border: none; 
+          background: none; 
+    }
+     #themebtn2:hover {
+      transform: scale(1.3);
+    }
+     body.dark2 {
+      background: linear-gradient(135deg, #f3aa2b, #fad0c4);
+color: #110f0f;
+
+    }
+    
+    .container {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(240, 218, 131, 0.2);
+      width: 80%;
+      max-width: 700px;
+      padding: 30px;
+      text-align: center;
+    }
+    body.dark2 .container {
+      background: #b9dc46;
+      box-shadow: 0 8px 20px rgba(177, 97, 97, 0.1);
+    }
+
+    #themebtn3 {
+        
+      font-size: 55px;
+      cursor:crosshair;
+      transition: transform 0.2s;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #191119;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 5px;
+
+        border: none; 
+          background: none; 
+    }
+     #themebtn3:hover {
+      transform: scale(1.3);
+    }
+     body.dark3 {
+      background: linear-gradient(90deg, #000000, #202933);
+color: #504242;
+
+    }
+    
+    .container {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(10, 10, 8, 0.2);
+      width: 80%;
+      max-width: 700px;
+      padding: 30px;
+      text-align: center;
+    }
+    body.dark3 .container {
+      background: #131d1a;
+      box-shadow: 0 8px 20px rgba(177, 97, 97, 0.1);
+    }
+
+    #themebtn4 {
+        
+      font-size: 55px;
+      cursor:crosshair;
+      transition: transform 0.2s;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4f695e;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 5px;
+
+        border: none; 
+          background: none; 
+    }
+     #themebtn4:hover {
+      transform: scale(1.3);
+    }
+     body.dark4 {
+      background: linear-gradient(90deg, #162022, #568d98);
+color: #100c0c;
+
+    }
+    
+    .container {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(240, 218, 131, 0.2);
+      width: 80%;
+      max-width: 700px;
+      padding: 30px;
+      text-align: center;
+    }
+    body.dark4 .container {
+      background: #070a0d;
+      box-shadow: 0 8px 20px rgba(177, 97, 97, 0.1);
+    }
+
+    #themebtn5 {
+        
+      font-size: 55px;
+      cursor:crosshair;
+      transition: transform 0.2s;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #3b303b;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 5px;
+
+        border: none; 
+          background: none; 
+    }
+     #themebtn5:hover {
+      transform: scale(1.3);
+    }
+     body.dark5 {
+      background: linear-gradient(35deg, #90d5d1, #36c8c8);
+color: #271111;
+
+    }
+    
+    .container {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(240, 218, 131, 0.2);
+      width: 80%;
+      max-width: 700px;
+      padding: 30px;
+      text-align: center;
+    }
+    body.dark5 .container {
+      background: #60a09c;
+      box-shadow: 0 8px 20px rgba(177, 97, 97, 0.1);
+    }
+
+
+   #sun {
+  position: absolute;   /* take it out of normal flow */
+  top: 10px;            /* distance from top */
+ 
+  left: 500px;         /* distance from right */
+  font-size: 28px;      /* make emoji bigger */
+  background: none;     /* no background */
+  border: none;         /* no border */
+  cursor: pointer;      /* pointer on hover */
+}
+
+
+   #moon {
+  position: absolute;   /* take it out of normal flow */
+  top: 10px;            /* distance from top */
+ 
+  right: 500px;         /* distance from right */
+  font-size: 28px;      /* make emoji bigger */
+  background: none;     /* no background */
+  border: none;         /* no border */
+  cursor: pointer;      /* pointer on hover */
+}
+
+
+#rain1 {
+  position: absolute;   /* take it out of normal flow */
+  top: 10px;            /* distance from top */
+ 
+  right: 300px;         /* distance from right */
+  font-size: 28px;      /* make emoji bigger */
+  background:none;     /* no background */
+  border: none;         /* no border */
+  cursor: pointer;      /* pointer on hover */
+}
+
+
+#rain2 {
+  position: absolute;   /* take it out of normal flow */
+  top: 10px;            /* distance from top */
+ 
+  right: 400px;         /* distance from right */
+  font-size: 28px;      /* make emoji bigger */
+  background: none;     /* no background */
+  border: none;         /* no border */
+  cursor: pointer;      /* pointer on hover */
+}
+
+
+#snow {
+  position: absolute;   /* take it out of normal flow */
+  top: 10px;            /* distance from top */
+ 
+  left: 400px;         /* distance from right */
+  font-size: 28px;      /* make emoji bigger */
+  background: none;     /* no background */
+  border: none;         /* no border */
+  cursor: pointer;      /* pointer on hover */
+}
+
+
+
+  </style>
+</head>
+<body>
+  <h2>💌 Your Saved Letter</h2>
+  <div class="letter">{{ content }}</div>
+ <div id ="sun"><button id="themebtn2">🌞</button></div>
+   <div id = "moon"> <button id="themebtn1">🌛</button></div>
+   <div id ="rain1"><button id="themebtn3">🌧️</button></div>
+   <div id ="rain2"><button id="themebtn4">🌩️</button></div>
+   <div id ="snow"><button id="themebtn5">❄️</button></div>
+  
+
+  <!-- Navigation buttons -->
+  <button onclick="window.location.href='{{ url_for('index') }}'">🏠 Homepage</button>
+  <button onclick="window.location.href='{{ url_for('list_letters') }}'">📜 View All Letters</button>
+
+
+
+
+
+  
+  <script>
+    const letterBox = document.getElementById("letterBox");
+    const stickers = document.querySelectorAll(".sticker");
+
+    stickers.forEach(sticker => {
+      sticker.addEventListener("click", () => {
+        letterBox.value += sticker.textContent; // add sticker to text
+      });
+    });
+    const themeBtn1 = document.getElementById("themebtn1");
+    themeBtn1.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      document.body.classList.toggle("light");
+    });
+    const themeBtn2 = document.getElementById("themebtn2");
+    themeBtn2.addEventListener("click", () => {
+      document.body.classList.toggle("dark2");
+      document.body.classList.toggle("light");
+    });
+
+    const themeBtn3 = document.getElementById("themebtn3");
+    themeBtn3.addEventListener("click", () => {
+      document.body.classList.toggle("dark3");
+      document.body.classList.toggle("light");
+    });
+
+    const themeBtn4 = document.getElementById("themebtn4");
+    themeBtn4.addEventListener("click", () => {
+      document.body.classList.toggle("dark4");
+      document.body.classList.toggle("light");
+    });
+
+    const themeBtn5 = document.getElementById("themebtn5");
+    themeBtn5.addEventListener("click", () => {
+      document.body.classList.toggle("dark5");
+      document.body.classList.toggle("light");
+    });
+
+
+
+
+   
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>ScriptLab Login</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298, #1c92d2); /* deep blue to aqua */
+    font-family: 'Courier New', monospace;
+    color: #e0f7fa;
+}
+
+.main-box {
+    min-height: 100vh;
+}
+
+.register-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 128, 0.35); /* blue glow */
+    backdrop-filter: blur(12px);
+}
+
+.left-panel {
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); /* ocean blues */
+}
+
+.brand-title {
+    font-size: 42px;
+    letter-spacing: 2px;
+    color: #bbdefb; /* soft sky blue */
+}
+
+.feature-box {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-3px);
+    border-color: #64b5f6; /* highlight blue */
+}
+
+.feature-box h5 {
+    font-size: 18px;
+    color: #e3f2fd;
+}
+
+.small-text {
+    color: #90caf9;
+}
+
+.quote {
+    color: #64b5f6;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.form-control {
+    background: #0d1b2a;
+    border: 1px solid #1b263b;
+    color: #e0f7fa;
+    border-radius: 14px;
+    padding: 14px;
+}
+
+.form-control:focus {
+    background: #0d1b2a;
+    color: #e0f7fa;
+    border-color: #64b5f6;
+    box-shadow: none;
+}
+
+.form-label {
+    color: #bbdefb;
+    font-size: 14px;
+}
+
+.btn-custom {
+    border-radius: 14px;
+    padding: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #2196f3, #64b5f6);
+    color: #fff;
+    border: none;
+}
+
+.right-panel h1 {
+    font-size: 42px;
+    color: #bbdefb;
+}
+
+@media(max-width:992px) {
+    .left-panel {
+        display: none;
+    }
+
+    .right-panel {
+        padding: 35px !important;
+    }
+
+    .right-panel h1 {
+        font-size: 32px;
+    }
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="container main-box d-flex align-items-center justify-content-center py-5">
+
+<div class="row login-card w-100" style="max-width:1100px;">
+
+    <!-- LEFT SIDE -->
+    <div class="col-lg-6 left-panel p-5">
+
+        <h1 class="mb-2">🎬 TWISHII</h1>
+        <p class="small-text mb-5"> feelings🙂‍↕️ </p>
+
+        <div class="feature-box p-4 mb-3">
+            <h5>letter</h5>
+            <p class="small-text mb-0">write your feelings ❤️.</p>
+        </div>
+
+        <div class="feature-box p-4 mb-3">
+            <h5>✍️ Write & express</h5>
+            <p class="small-text mb-0">Type — ishita cutie😗😗.</p>
+        </div>
+
+        <div class="feature-box p-4 mb-3">
+            <h5>📂 Save & Heal</h5>
+            <p class="small-text mb-0">all feelings one place — anytime access .</p>
+        </div>
+
+        
+
+        <p class="quote">"MOVIE , MUSIC AND MEEEEE😗."</p>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="col-lg-6 p-5 d-flex align-items-center">
+
+        <div class="w-100">
+
+            <h1 class="mb-2">Welcome Back BABYY|||| 🎬</h1>
+            <p class="small-text mb-4">Login to continue your creative journey</p>
+
+            {% if error %}
+            <div class="alert alert-danger">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <form action="/" method="POST">
+
+                <input type="text" style="display:none">
+                <input type="password" style="display:none">
+
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text"
+                           name="name"
+                           class="form-control"
+                           placeholder="Enter your name"
+                           autocomplete="new-password">
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Password</label>
+                    <input type="password"
+                           name="password"
+                           class="form-control"
+                           placeholder="Enter your password"
+                           autocomplete="new-password">
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary btn-custom w-100 mb-3">
+                    LOGIN
+                </button>
+
+                <a href="/register"
+                   class="btn btn-outline-light btn-custom w-100">
+                   Create an account
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
